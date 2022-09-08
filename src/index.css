@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+
+@font-face {
+  font-family: "Mangolaine";
+  src: url("./assets/Mangolaine/Mangolaine_1.eot");
+  src: url("./assets/Mangolaine/Mangolaine.eot?#iefix") format("embedded-opentype"),
+    url("./assets/Mangolaine/Mangolaine.woff2") format("woff2"),
+    url("Mangolaine.woff") format("woff"),
+    url("./assets/Mangolaine/Mangolaine.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
