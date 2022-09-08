@@ -1,11 +1,9 @@
-import { useState } from "react";
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <div className="bg-bg_dark h-screen w-full">
-      <h1 className="text-brand-primary text-3xl font-mangolaine">Mangolaine</h1>
-      <h1 className="text-brand-primary text-3xl font-manrope">Manrope</h1>
-      <h1 className="text-brand-primary text-3xl">Default</h1>
+    <div>
+      <Home />
     </div>
   );
 }
