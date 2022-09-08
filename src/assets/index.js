@@ -10,6 +10,7 @@ import namaste from "./namaste.png";
 import idea from "./idea.png";
 import email from "./email_btn.png";
 import dropdown from "./expand_more.png";
+import plus from "./plus.png";
 
 export {
   open,
@@ -24,4 +25,5 @@ export {
   idea,
   email,
   dropdown,
+  plus,
 };

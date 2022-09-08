@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { light_mode, dark_mode, close, open } from "../assets";
+import { light_mode, dark_mode, close, open, plus } from "../assets";
 import { navLinks } from "../constants/navlinks";
 
 function NavLink({ name, link, img, active }) {
@@ -28,9 +28,28 @@ function NavLink({ name, link, img, active }) {
   }
 }
 
+function MobileDropDown() {
+  return (
+    <div>
+      <ul className="text-black dark:text-white">
+        <li className="uppercase font-normal py-3">
+          <a href="/">Case Studies</a>
+        </li>
+        <li className="uppercase font-normal py-3">
+          <a href="/">Dribble Shots</a>
+        </li>
+        <li className="uppercase font-normal py-3">
+          <a href="/">3D & Illustration</a>
+        </li>
+      </ul>
+    </div>
+  );
+}
+
 const Header = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [mobileNav, setMobileNav] = useState(false);
+  const [mobileDropdown, setMobileDropdown] = useState(false);
 
   function toggleDarkMode() {
     setDarkMode((prev) => !prev);
@@ -41,52 +60,77 @@ const Header = () => {
     setMobileNav((prev) => !prev);
   }
 
+  function toggleDropdown() {
+    setMobileDropdown((prev) => !prev);
+  }
+
   return (
-    <header className="flex justify-between items-center w-full py-6 px-[24px] sm:px-[2.5%] md:px-[5%] lg:px-[10%] dark:bg-bg_dark transition bg-white duration-500 ease-linear">
-      <div className="w-[50%] lg:w-[20%] order-2 lg:order-1 justify-center lg:justify-start">
-        <h1 className="font-mangolaine text-3xl font-normal text-black dark:text-white text-center lg:text-left">
-          Emmah
-          <span className="w-[10px] h-[10px] inline-block rounded-full bg-brand-primary" />
-        </h1>
+    <header>
+      <div className="flex justify-between items-center w-full py-6 px-[24px] sm:px-[2.5%] md:px-[5%] lg:px-[10%] dark:bg-bg_dark transition bg-white duration-500 ease-linear fixed top-0 z-[99]">
+        <div className="w-[50%] lg:w-[20%] order-2 lg:order-1 justify-center lg:justify-start">
+          <h1 className="font-mangolaine text-3xl font-normal text-black dark:text-white text-center lg:text-left">
+            Emmah
+            <span className="w-[10px] h-[10px] inline-block rounded-full bg-brand-primary" />
+          </h1>
+        </div>
+        <nav className="lg:w-[40%] hidden lg:block order-2">
+          <ul className="flex items-center justify-between w-full font-manrope">
+            {navLinks.map((link) => {
+              return (
+                <NavLink
+                  name={link.name}
+                  key={link.id}
+                  link={link.link}
+                  img={link.img}
+                  active={link.active}
+                />
+              );
+            })}
+          </ul>
+        </nav>
+        <div className="w-[25%] lg:w-[20%] flex items-center lg:justify-end justify-start order-1 lg:order-3">
+          <img
+            className="w-[17px] cursor-pointer"
+            onClick={() => toggleDarkMode()}
+            src={darkMode ? dark_mode : light_mode}
+          />
+        </div>
+        <div className="w-[25%] flex items-center justify-end lg:hidden order-3">
+          <img
+            className="w-[17px] cursor-pointer"
+            onClick={() => toggleNav()}
+            src={mobileNav ? close : open}
+          />
+        </div>
       </div>
-      <nav className="lg:w-[40%] hidden lg:block order-2">
-        <ul className="flex items-center justify-between w-full font-manrope">
-          {navLinks.map((link) => {
-            return (
-              <NavLink
-                name={link.name}
-                key={link.id}
-                link={link.link}
-                img={link.img}
-                active={link.active}
-              />
-            );
-          })}
-        </ul>
-      </nav>
-      <div className="w-[25%] lg:w-[20%] flex items-center lg:justify-end justify-start order-1 lg:order-3">
-        <img
-          className="w-[17px] cursor-pointer"
-          onClick={() => toggleDarkMode()}
-          src={darkMode ? dark_mode : light_mode}
-        />
-      </div>
-      <div className="w-[25%] flex items-center justify-end lg:hidden order-3">
-        <img
-          className="w-[17px] cursor-pointer"
-          onClick={() => toggleNav()}
-          src={mobileNav ? close : open}
-        />
-      </div>
-      <div className="block lg:hidden bg-white dark:bg_dark w-full transition-transform duration-300 h-screen absolute top-0 left-0 px-[24px]">
-        <ul>
+
+      {/* {Mobile Navbar} */}
+      <div
+        className={`block lg:hidden bg-white dark:bg-bg_dark w-full transition-transform duration-[400ms] h-screen absolute top-[64px] left-0 px-[24px] py-[20px] z-[90] ${
+          mobileNav ? "translate-y-0" : "-translate-y-[300%]"
+        }`}
+      >
+        <ul className="text-black dark:text-white">
           <li className="border-b border-brand-gray-200 uppercase font-semibold py-6">
             <a href="/">Home</a>
           </li>
-          <li className="border-b border-brand-gray-200 uppercase font-semibold py-6">
-            <a href="/" className="py-6">
-              Projects
-            </a>
+          <li className="border-b border-brand-gray-200 uppercase font-semibold py-6 flex flex-col">
+            <div className="w-full flex justify-between items-center">
+              <a href="/">Projects</a>
+              <img
+                src={plus}
+                alt="Mobile dropdown"
+                className="w-[24px] h-[24px] object-contain cursor-pointer"
+                onClick={() => toggleDropdown()}
+              />
+            </div>
+            <div
+              className={`transition-[max-height] overflow-hidden ${
+                mobileDropdown ? "max-h-[200px]" : "max-h-0"
+              }`}
+            >
+              <MobileDropDown />
+            </div>
           </li>
           <li className="border-b border-brand-gray-200 uppercase font-semibold py-6">
             <a href="/">About</a>
