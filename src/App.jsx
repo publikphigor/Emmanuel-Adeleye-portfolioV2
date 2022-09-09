@@ -5,7 +5,9 @@ import Home from "./pages/Home";
 
 function App() {
   // Dark Mode Props
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
+  darkMode && document.documentElement.classList.add("dark");
+
   function toggleDarkMode() {
     setDarkMode((prev) => !prev);
     document.documentElement.classList.toggle("dark");
@@ -17,10 +19,11 @@ function App() {
     setTimeout(() => {
       setLoading(false);
     }, 5000);
+    setDarkMode((prev) => !prev);
   }, []);
 
   return (
-    <div>
+    <div className="dark:bg-bg_dark h-screen w-full bg-white">
       {loading ? (
         <Loader theme={darkMode} />
       ) : (

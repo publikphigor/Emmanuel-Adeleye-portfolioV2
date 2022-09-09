@@ -6,11 +6,11 @@ const Loader = ({ theme }) => {
       <div className="relative w-[140px] h-[140px] mx-auto">
         <img
           src={theme ? outline_dark : outline_light}
-          className="absolute w-full h-full object-contain top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%]"
+          className="absolute w-full h-full object-contain top-1/2 left-1/2 loader_outline"
         />
         <img
           src={loader}
-          className="absolute w-[80px] h-[80px] object-contain top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%]"
+          className="absolute w-[80px] h-[80px] object-contain top-1/2 left-1/2 loader_image"
         />
       </div>
     </div>
