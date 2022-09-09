@@ -7,6 +7,7 @@ import dark_mode from "./dark_mode.png";
 import star from "./star.png";
 import link_out from "./link_out.png";
 import link_right from "./link_right.png";
+import loader from "./loader.png";
 import namaste from "./namaste.png";
 import idea from "./idea.png";
 import email from "./email_btn.png";
@@ -31,6 +32,7 @@ export {
   star,
   link_out,
   link_right,
+  loader,
   namaste,
   idea,
   email,
