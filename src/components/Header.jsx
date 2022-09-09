@@ -8,8 +8,8 @@ const Header = ({ theme, toggleTheme }) => {
     if (img) {
       return (
         <li
-          className={`uppercase text-base text-brand-gray font-medium hover:text-black dark:hover:text-white transition duration-500 font-manrope ${
-            active ? "text-black dark:text-white" : "text-brand-gray"
+          className={`uppercase text-base text-brand-gray font-medium hover:text-brand-black dark:hover:text-white transition duration-500 font-manrope ${
+            active ? "text-brand-black dark:text-white" : "text-brand-gray"
           }`}
           onMouseEnter={() => setMobileDropdown(true)}
         >
@@ -21,8 +21,8 @@ const Header = ({ theme, toggleTheme }) => {
     } else {
       return (
         <li
-          className={`uppercase text-base font-medium hover:text-black dark:hover:text-white transition duration-500 font-manrope ${
-            active ? "text-black dark:text-white" : "text-brand-gray"
+          className={`uppercase text-base font-medium hover:text-brand-black dark:hover:text-white transition duration-500 font-manrope ${
+            active ? "text-brand-black dark:text-white" : "text-brand-gray"
           }`}
         >
           <a href={link}>{name}</a>
@@ -34,7 +34,7 @@ const Header = ({ theme, toggleTheme }) => {
   function MobileDropDown() {
     return (
       <div>
-        <ul className="text-black dark:text-white">
+        <ul className="text-brand-black dark:text-white">
           <li className="uppercase font-normal py-3">
             <a href="/">Case Studies</a>
           </li>
@@ -64,12 +64,12 @@ const Header = ({ theme, toggleTheme }) => {
     <header>
       <div className="flex justify-between items-center w-full py-6 px-[24px] sm:px-[2.5%] md:px-[5%] lg:px-[10%] dark:bg-bg_dark transition bg-white duration-500 ease-linear fixed top-0 z-[99]">
         <div className="w-[50%] lg:w-[20%] order-2 lg:order-1 justify-center lg:justify-start">
-          <h1 className="font-mangolaine text-3xl font-normal text-black dark:text-white text-center lg:text-left">
+          <h1 className="font-mangolaine text-3xl font-normal text-brand-black dark:text-white text-center lg:text-left">
             Emmah
             <span className="w-[10px] h-[10px] inline-block rounded-full bg-brand-primary" />
           </h1>
         </div>
-        <nav className="lg:w-[40%] hidden lg:block order-2">
+        <nav className="lg:w-[50%] xl:w-[40%] hidden lg:block order-2">
           <ul className="flex items-center justify-between w-full font-manrope">
             {navLinks.map((link) => {
               return (
@@ -102,11 +102,11 @@ const Header = ({ theme, toggleTheme }) => {
 
       {/* {Mobile Navbar} */}
       <div
-        className={`block lg:hidden bg-white dark:bg-bg_dark w-full transition-transform duration-[500ms] h-screen absolute top-[64px] left-0 px-[24px] py-[20px] z-[90] ${
+        className={`block lg:hidden bg-white dark:bg-bg_dark w-full transition-transform duration-[500ms] h-screen fixed top-[64px] left-0 px-[24px] py-[20px] z-[90] ${
           mobileNav ? "translate-y-0" : "-translate-y-[300%]"
         }`}
       >
-        <ul className="text-black dark:text-white">
+        <ul className="text-brand-black dark:text-white">
           <li className="border-b border-brand-gray-200 uppercase font-semibold py-6">
             <a href="/">Home</a>
           </li>
@@ -138,9 +138,9 @@ const Header = ({ theme, toggleTheme }) => {
       </div>
 
       {/* {Show dropdown on desktop} */}
-      <div>
+      <>
         <NavbarDropdown toggle={mobileDropdown} setToggle={setMobileDropdown} />
-      </div>
+      </>
     </header>
   );
 };

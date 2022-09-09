@@ -1,11 +1,10 @@
-import { projects } from "../assets";
 import { projectsDropdown } from "../constants";
 
 const NavbarDropdown = ({ toggle, setToggle }) => {
   return (
     <div
-      className={`hidden lg:flex justify-between items-center w-[80%] mx-auto fixed z-[10] left-[50%] -translate-x-[50%] top-[120px] p-[32px] bg-white transition-opacity duration-500 dark:bg-bg_dark text-black dark:text-white ${
-        toggle ? "opacity-100" : "opacity-0"
+      className={`hidden  justify-between items-center w-[80%] mx-auto fixed z-[10] left-[50%] -translate-x-[50%] top-[120px] p-[32px] bg-white transition-opacity duration-500 dark:bg-bg_dark text-black dark:text-white ${
+        toggle ? "opacity-100 lg:flex" : "opacity-0"
       }`}
       onMouseLeave={() => setToggle(false)}
     >

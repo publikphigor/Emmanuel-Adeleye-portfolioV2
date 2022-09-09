@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Header, Hero } from "../components";
+import { Header, Hero, Projects, Footer } from "../components";
 
 const Home = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -13,6 +13,8 @@ const Home = () => {
     <div>
       <Header theme={darkMode} toggleTheme={toggleDarkMode} />
       <Hero theme={darkMode} />
+      <Projects />
+      <Footer />
     </div>
   );
 };

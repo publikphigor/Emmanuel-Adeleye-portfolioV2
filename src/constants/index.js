@@ -46,9 +46,36 @@ const projectsDropdown = [
   },
 ];
 
+const projectsInfo = [
+  {
+    id: 1,
+    name: "Spark Card",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porttitor metus, at varius arcu eget pharetra, diam dapibus. Massa diam cras eget urna donec orci.",
+    link: "/",
+    img: "",
+  },
+  {
+    id: 2,
+    name: "Dollar Africa",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porttitor metus, at varius arcu eget pharetra, diam dapibus. Massa diam cras eget urna donec orci.",
+    link: "/",
+    img: "",
+  },
+  {
+    id: 3,
+    name: "Vella Finance",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porttitor metus, at varius arcu eget pharetra, diam dapibus. Massa diam cras eget urna donec orci.",
+    link: "/",
+    img: "",
+  },
+];
+
 const styles = {
   sectionDefault:
-    "bg-white dark:bg-bg_dark text-black dark:text-white w-full px-[24px] sm:px-[2.5%] md:px-[5%] lg:px-[10%] ease-linear transition-colors duration-500",
+    "bg-white dark:bg-bg_dark text-brand-black dark:text-white w-full px-[24px] sm:px-[2.5%] md:px-[5%] lg:px-[10%] ease-linear transition-colors duration-500",
 };
 
-export { navLinks, projectsDropdown, styles };
+export { navLinks, projectsDropdown, projectsInfo, styles };

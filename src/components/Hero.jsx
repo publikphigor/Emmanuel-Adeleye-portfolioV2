@@ -17,15 +17,15 @@ const Hero = ({ theme }) => {
       </div>
       <div className="w-full overflow-hidden">
         <img className="block w-[220px] mx-auto" src={emmah} alt="Emmanuel Adeleye" />
-        <h1 className="text-center font-mangolaine text-[20px] lg:text-[40px] uppercase">
+        <h1 className="text-center font-mangolaine text-[20px] sm:text-[40px] uppercase">
           Hey, I'm Emmanuel
         </h1>
-        <h1 className="text-center font-mangolaine text-[20px] lg:text-[40px] uppercase flex items-center justify-center gap-3">
+        <h1 className="text-center font-mangolaine text-[20px] sm:text-[40px] uppercase flex items-center justify-center gap-3">
           <span>A Product</span>
-          <span className="lg:w-[21px] lg:h-[21px] w-[10px] h-[10px] inline-block rounded-full bg-brand-primary" />{" "}
+          <span className="sm:w-[21px] sm:h-[21px] w-[10px] h-[10px] inline-block rounded-full bg-brand-primary" />{" "}
           <span>Designer (UI/UX)</span>
         </h1>
-        <p className="font-normal font-manrope text-[14px] lg:text-[16px] text-center text-[#9a9a9a]">
+        <p className="font-normal font-manrope text-[14px] sm:text-[16px] text-center text-brand-gray">
           I love creating user-friendly products for ambitious businesses. <br />
           Currently working remotely from Nigeria.
         </p>

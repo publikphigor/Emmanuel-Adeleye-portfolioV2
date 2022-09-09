@@ -6,6 +6,7 @@ import light_mode from "./light_mode.png";
 import dark_mode from "./dark_mode.png";
 import star from "./star.png";
 import link_out from "./link_out.png";
+import link_right from "./link_right.png";
 import namaste from "./namaste.png";
 import idea from "./idea.png";
 import email from "./email_btn.png";
@@ -29,6 +30,7 @@ export {
   dark_mode,
   star,
   link_out,
+  link_right,
   namaste,
   idea,
   email,
