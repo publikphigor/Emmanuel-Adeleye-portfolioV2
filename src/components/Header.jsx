@@ -1,60 +1,56 @@
 import { useState } from "react";
-import { light_mode, dark_mode, close, open, plus } from "../assets";
-import { navLinks } from "../constants/navlinks";
+import { light_mode, dark_mode, close, open, plus, close_circle } from "../assets";
+import { navLinks } from "../constants";
+import { NavbarDropdown } from "../components";
 
-function NavLink({ name, link, img, active }) {
-  if (img) {
+const Header = ({ theme, toggleTheme }) => {
+  function NavLink({ name, link, img, active }) {
+    if (img) {
+      return (
+        <li
+          className={`uppercase text-base text-brand-gray font-medium hover:text-black dark:hover:text-white transition duration-500 font-manrope ${
+            active ? "text-black dark:text-white" : "text-brand-gray"
+          }`}
+          onMouseEnter={() => setMobileDropdown(true)}
+        >
+          <p href={link} className="flex items-center cursor-pointer">
+            {name} <img className="inline-block w-[20px]" src={img} alt={name} />
+          </p>
+        </li>
+      );
+    } else {
+      return (
+        <li
+          className={`uppercase text-base font-medium hover:text-black dark:hover:text-white transition duration-500 font-manrope ${
+            active ? "text-black dark:text-white" : "text-brand-gray"
+          }`}
+        >
+          <a href={link}>{name}</a>
+        </li>
+      );
+    }
+  }
+
+  function MobileDropDown() {
     return (
-      <li
-        className={`uppercase text-base text-brand-gray font-medium hover:text-black dark:hover:text-white transition duration-300 font-manrope ${
-          active ? "text-black dark:text-white" : "text-brand-gray"
-        }`}
-      >
-        <a href={link} className="flex items-center">
-          {name} <img className="inline-block w-[20px]" src={img} alt={name} />
-        </a>
-      </li>
-    );
-  } else {
-    return (
-      <li
-        className={`uppercase text-base font-medium hover:text-black dark:hover:text-white transition duration-300 font-manrope ${
-          active ? "text-black dark:text-white" : "text-brand-gray"
-        }`}
-      >
-        <a href={link}>{name}</a>
-      </li>
+      <div>
+        <ul className="text-black dark:text-white">
+          <li className="uppercase font-normal py-3">
+            <a href="/">Case Studies</a>
+          </li>
+          <li className="uppercase font-normal py-3">
+            <a href="/">Dribble Shots</a>
+          </li>
+          <li className="uppercase font-normal py-3">
+            <a href="/">3D & Illustration</a>
+          </li>
+        </ul>
+      </div>
     );
   }
-}
 
-function MobileDropDown() {
-  return (
-    <div>
-      <ul className="text-black dark:text-white">
-        <li className="uppercase font-normal py-3">
-          <a href="/">Case Studies</a>
-        </li>
-        <li className="uppercase font-normal py-3">
-          <a href="/">Dribble Shots</a>
-        </li>
-        <li className="uppercase font-normal py-3">
-          <a href="/">3D & Illustration</a>
-        </li>
-      </ul>
-    </div>
-  );
-}
-
-const Header = () => {
-  const [darkMode, setDarkMode] = useState(false);
   const [mobileNav, setMobileNav] = useState(false);
   const [mobileDropdown, setMobileDropdown] = useState(false);
-
-  function toggleDarkMode() {
-    setDarkMode((prev) => !prev);
-    document.documentElement.classList.toggle("dark");
-  }
 
   function toggleNav() {
     setMobileNav((prev) => !prev);
@@ -91,8 +87,8 @@ const Header = () => {
         <div className="w-[25%] lg:w-[20%] flex items-center lg:justify-end justify-start order-1 lg:order-3">
           <img
             className="w-[17px] cursor-pointer"
-            onClick={() => toggleDarkMode()}
-            src={darkMode ? dark_mode : light_mode}
+            onClick={() => toggleTheme()}
+            src={theme ? light_mode : dark_mode}
           />
         </div>
         <div className="w-[25%] flex items-center justify-end lg:hidden order-3">
@@ -106,7 +102,7 @@ const Header = () => {
 
       {/* {Mobile Navbar} */}
       <div
-        className={`block lg:hidden bg-white dark:bg-bg_dark w-full transition-transform duration-[400ms] h-screen absolute top-[64px] left-0 px-[24px] py-[20px] z-[90] ${
+        className={`block lg:hidden bg-white dark:bg-bg_dark w-full transition-transform duration-[500ms] h-screen absolute top-[64px] left-0 px-[24px] py-[20px] z-[90] ${
           mobileNav ? "translate-y-0" : "-translate-y-[300%]"
         }`}
       >
@@ -118,7 +114,7 @@ const Header = () => {
             <div className="w-full flex justify-between items-center">
               <a href="/">Projects</a>
               <img
-                src={plus}
+                src={mobileDropdown ? close_circle : plus}
                 alt="Mobile dropdown"
                 className="w-[24px] h-[24px] object-contain cursor-pointer"
                 onClick={() => toggleDropdown()}
@@ -139,6 +135,11 @@ const Header = () => {
             <a href="/">My Resume</a>
           </li>
         </ul>
+      </div>
+
+      {/* {Show dropdown on desktop} */}
+      <div>
+        <NavbarDropdown toggle={mobileDropdown} setToggle={setMobileDropdown} />
       </div>
     </header>
   );
