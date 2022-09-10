@@ -1,4 +1,4 @@
-import { dropdown, projects } from "../assets";
+import { dropdown, projects, link_out } from "../assets";
 
 const navLinks = [
   {
@@ -73,9 +73,47 @@ const projectsInfo = [
   },
 ];
 
+const contributionsInfo = [
+  {
+    id: 1,
+    name: "App Nav. Kits",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porttitor metus, at varius arcu eget pharetra, diam dapibus. Massa diam cras eget urna donec orci.",
+    link: "/",
+    img: link_out,
+  },
+
+  {
+    id: 2,
+    name: "Glass Icons",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porttitor metus, at varius arcu eget pharetra, diam dapibus. Massa diam cras eget urna donec orci.",
+    link: "/",
+    img: link_out,
+  },
+
+  {
+    id: 3,
+    name: "Low-Fi Kits",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porttitor metus, at varius arcu eget pharetra, diam dapibus. Massa diam cras eget urna donec orci.",
+    link: "/",
+    img: link_out,
+  },
+
+  {
+    id: 4,
+    name: "Explore More",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porttitor metus, at varius arcu eget pharetra, diam dapibus. Massa diam cras eget urna donec orci.",
+    link: "/",
+    img: link_out,
+  },
+];
+
 const styles = {
   sectionDefault:
-    "bg-white dark:bg-bg_dark text-brand-black dark:text-white w-full px-[24px] sm:px-[2.5%] md:px-[5%] lg:px-[10%] ease-linear transition-colors duration-500",
+    "bg-white dark:bg-bg_dark text-brand-black dark:text-white w-full px-[16px] md:px-[4%] lg:px-[16%] ease-linear transition-colors duration-500 mt-[100px]",
 };
 
-export { navLinks, projectsDropdown, projectsInfo, styles };
+export { navLinks, projectsDropdown, projectsInfo, contributionsInfo, styles };

@@ -39,7 +39,7 @@ const Hero = ({ theme }) => {
         <img
           src={theme ? hero_text_dark : hero_text_light}
           alt="Emmanuel Adeleye"
-          className="absolute top-[50%] left-[50%] w-[120px] h-[118px] block -translate-x-[50%] -translate-y-[50%]"
+          className="absolute top-[50%] left-[50%] w-[120px] h-[118px] block rotator"
         />
         <img
           src={theme ? arrow_dark : arrow_light}

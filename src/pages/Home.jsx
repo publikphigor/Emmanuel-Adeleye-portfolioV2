@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Header, Hero, Projects, Footer } from "../components";
+import { Header, Hero, Projects, Footer, Contributions } from "../components";
 
 const Home = ({ theme, toggleTheme }) => {
   return (
@@ -7,6 +7,7 @@ const Home = ({ theme, toggleTheme }) => {
       <Header theme={theme} toggleTheme={toggleTheme} />
       <Hero theme={theme} />
       <Projects />
+      <Contributions />
       <Footer />
     </div>
   );

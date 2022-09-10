@@ -8,6 +8,7 @@ function App() {
   const [darkMode, setDarkMode] = useState(true);
   darkMode && document.documentElement.classList.add("dark");
 
+  // Toggle dark mode
   function toggleDarkMode() {
     setDarkMode((prev) => !prev);
     document.documentElement.classList.toggle("dark");
@@ -19,7 +20,6 @@ function App() {
     setTimeout(() => {
       setLoading(false);
     }, 5000);
-    setDarkMode((prev) => !prev);
   }, []);
 
   return (

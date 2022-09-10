@@ -1,7 +1,9 @@
 import { projectsInfo } from "../constants";
 import { styles } from "../constants";
 import { link_right } from "../assets";
+import { SectionHeading } from "../components";
 
+// {Dynamic component generated from projectsInfo data to render each project.}
 function Project({ img, link, name, description }) {
   return (
     <div className="flex-shrink-0 w-auto text-center">
@@ -27,16 +29,13 @@ function Project({ img, link, name, description }) {
     </div>
   );
 }
+
+// {Main Projects section}
 const Projects = () => {
   return (
-    <section id="projects" className={`${styles.sectionDefault} mt-[64px]`}>
+    <section id="projects" className={`${styles.sectionDefault}`}>
       <div className="border-[0.5px] border-brand-gray-200 dark:border-brand-gray-300 py-[40px] px-[24px]">
-        <h2 className="uppercase font-semibold font-manrope text-base sm:text-[24px] text-center leading-none">
-          Featured Projects
-        </h2>
-        <h1 className="text-[40px] sm:text-[96px] font-mangolaine text-brand-gray-200 dark:text-brand-gray-300 text-center uppercase leading-[0.8]">
-          Projects
-        </h1>
+        <SectionHeading h1="Featured projects" h2="Projects" />
         <div className="flex gap-[24px] sm:gap-[41px] mt-10 overflow-x-auto">
           {projectsInfo.map((project) => {
             return <Project key={project.id} {...project} />;

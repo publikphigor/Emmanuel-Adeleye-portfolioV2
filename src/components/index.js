@@ -7,5 +7,17 @@ import Hero from "./Hero";
 import Loader from "./Loader";
 import NavbarDropdown from "./NavbarDropdown";
 import Projects from "./Projects";
+import SectionHeading from "./SectionHeading";
 
-export { Articles, Contact, Contributions, Footer, Header, Hero, Loader, NavbarDropdown, Projects };
+export {
+  Articles,
+  Contact,
+  Contributions,
+  Footer,
+  Header,
+  Hero,
+  Loader,
+  NavbarDropdown,
+  Projects,
+  SectionHeading,
+};
