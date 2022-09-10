@@ -12,14 +12,17 @@ const Loader = ({ theme }) => {
       <div className="relative w-[140px] h-[140px] mx-auto">
         <img
           src={theme ? outline_dark : outline_light}
+          alt="Loader Image"
           className="absolute w-full h-full object-contain top-1/2 left-1/2 loader_outline"
         />
         <img
           src={theme ? loader_text_dark : loader_text_light}
+          alt="Loader Image"
           className="absolute w-[120px] h-[120px] object-contain top-1/2 left-1/2 loader_text"
         />
         <img
           src={loader}
+          alt="Loader Image"
           className="absolute w-[80px] h-[80px] object-contain top-1/2 left-1/2 loader_image"
         />
       </div>

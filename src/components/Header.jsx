@@ -107,7 +107,7 @@ const Header = ({ theme, toggleTheme }) => {
 
       {/* {Mobile Navbar} */}
       <div
-        className={`block lg:hidden bg-white dark:bg-bg_dark w-full transition-transform duration-[500ms] h-screen fixed top-[64px] left-0 px-[24px] py-[20px] z-[90] ${
+        className={`block lg:hidden bg-white dark:bg-bg_dark w-full transition-[transform_color_background-color] duration-500 ease-linear h-screen fixed top-[64px] left-0 px-[24px] py-[20px] z-[90] ${
           navbar ? "translate-y-0" : "-translate-y-[300%]"
         }`}
       >
