@@ -30,7 +30,7 @@ const Hero = ({ theme }) => {
       <a className="block w-[139px] h-[139px] mx-auto mt-[64px] relative" href="/">
         <img
           src={theme ? outline_dark : outline_light}
-          alt="Emmanuel Adeleye"
+          alt="outline"
           className="absolute top-[50%] left-[50%] w-full h-full block -translate-x-[50%] -translate-y-[50%]"
         />
         <img
@@ -40,7 +40,7 @@ const Hero = ({ theme }) => {
         />
         <img
           src={theme ? arrow_dark : arrow_light}
-          alt="Emmanuel Adeleye"
+          alt="arrow"
           className="absolute top-[50%] left-[50%] w-[48px] h-[42px] block -translate-x-[50%] -translate-y-[50%]"
         />
       </a>

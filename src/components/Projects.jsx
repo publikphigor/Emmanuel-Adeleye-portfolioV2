@@ -8,7 +8,7 @@ function Project({ img, link, name, description }) {
   return (
     <div className="flex-shrink-0 w-auto text-center">
       <div className="h-[191px] w-[191px] sm:h-[300px] sm:w-[300px] border-[0.5px] rounded-2xl border-brand-gray-200 dark:border-brand-gray-300 mb-[24px] mx-auto overflow-hidden">
-        <img className="block w-full h-full object-contain" src={img} />
+        <img className="block w-full h-full object-contain" src={img} alt={name} />
       </div>
       <div>
         <h3 className="uppercase font-manrope text-[12px] sm:text-xl text-brand-gray-200 dark:text-brand-gray-300">
@@ -25,7 +25,7 @@ function Project({ img, link, name, description }) {
           className="flex items-center text-brand-black dark:text-brand-gray uppercase justify-center my-[20px] text-[12px] sm:text-[16px]"
         >
           View Case Study
-          <img src={link_right} className="w-[20px] object-contain ml-3" />
+          <img src={link_right} className="w-[20px] object-contain ml-3" alt="link_right" />
         </a>
       </div>
     </div>

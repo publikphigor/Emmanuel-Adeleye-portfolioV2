@@ -92,6 +92,7 @@ const Header = ({ theme, toggleTheme }) => {
             className="w-[32px] cursor-pointer"
             onClick={() => toggleTheme()}
             src={theme ? light_mode : dark_mode}
+            alt="Dark mode toggler"
           />
         </div>
 
@@ -101,6 +102,7 @@ const Header = ({ theme, toggleTheme }) => {
             className="w-[32px] cursor-pointer"
             onClick={() => toggleNav()}
             src={navbar ? close : open}
+            alt="Navbar toggler"
           />
         </div>
       </div>
@@ -123,6 +125,7 @@ const Header = ({ theme, toggleTheme }) => {
                 alt="Mobile dropdown"
                 className="w-[24px] h-[24px] object-contain cursor-pointer"
                 onClick={() => toggleDropdown()}
+                alt="Dropdown toggler"
               />
             </div>
             <div
