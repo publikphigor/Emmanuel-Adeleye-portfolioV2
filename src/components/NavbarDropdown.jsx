@@ -10,14 +10,14 @@ const NavbarDropdown = ({ toggle, setToggle }) => {
     >
       {projectsDropdown.map((project) => (
         <div
-          className="border-[0.5px] border-[#1c1c1c] rounded-[16px] p-[16px] max-h-[270px] max-w-[280px]"
+          className="border-[0.5px] border-brand-gray-200 dark:border-brand-gray-300 rounded-[16px] py-[16px] max-h-[270px] max-w-[30%]"
           key={project.id}
         >
-          <h1 className="text-center font-manrope font-normal uppercase text-[24px] mb-[36px]">
+          <h1 className="text-center font-manrope font-normal uppercase text-[24px] mb-[36px] leading-[1]">
             {project.name}
           </h1>
-          <div className="w-5/6">
-            <img src={project.img} alt={project.name} className="w-full object-contain" />
+          <div className="w-5/6 mx-auto">
+            <img src={project.img} alt={project.name} className="object-contain" />
           </div>
         </div>
       ))}

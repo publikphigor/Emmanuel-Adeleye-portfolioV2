@@ -4,7 +4,7 @@ import { SectionHeading } from "../components";
 
 function Article({ name, date, category, excerpts, link }) {
   return (
-    <div className="flex flex-col md:flex-row text-center md:text-left w-full rounded-2xl border border-brand-gray-200 dark:border-brand-gray-300 mb-[24px] md:mb-[40px]">
+    <div className="flex flex-col md:flex-row text-center md:text-left w-full rounded-2xl border border-brand-gray-200 dark:border-brand-gray-300 mb-[24px] md:mb-[40px] bg-white dark:bg-bg_dark  transition-colors duration-500 ease-linear">
       <div className="w-full md:w-1/2 flex-shrink-0 border-b md:border-r md:border-b-0 border-brand-gray-200 dark:border-brand-gray-300 py-[24px] md:py-[40px] px-[16px] md:px-[24px]">
         <h3 className="text-[12px] md:text-[16px] text-brand-gray uppercase mb-[8px] md:mb-[16px] font-medium">
           {category} / {date}
@@ -53,7 +53,7 @@ const Articles = () => {
               href="/"
             >
               Read More on Medium
-              <img src={link_out} alt="Read More on Medium" className="w-[16px] lg:w-[40px]" />
+              <img src={link_out} alt="Read More on Medium" className="w-[32px] lg:w-[40px]" />
             </a>
           </div>
         </>

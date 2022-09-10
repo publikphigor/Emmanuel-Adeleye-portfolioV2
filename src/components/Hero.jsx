@@ -12,9 +12,6 @@ import { styles } from "../constants";
 const Hero = ({ theme }) => {
   return (
     <section className={`${styles.sectionDefault} relative mt-[130px]`} id="hero">
-      <div className="w-[30px] h-[30px] rounded-full border border-bg_dark dark:border-white flex justify-center items-center absolute top-0 lg:right-[30%] right-[10%]">
-        <span className="block h-[14px] w-[14px] rounded-full bg-bg_dark dark:bg-white"></span>
-      </div>
       <div className="w-full overflow-hidden">
         <img className="block w-[220px] mx-auto" src={emmah} alt="Emmanuel Adeleye" />
         <h1 className="text-center font-mangolaine text-[20px] sm:text-[40px] uppercase">

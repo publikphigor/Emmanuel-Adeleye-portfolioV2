@@ -66,10 +66,10 @@ const Header = ({ theme, toggleTheme }) => {
   return (
     <header>
       <div className="flex justify-between items-center w-full py-6 px-[16px] md:px-[4%] lg:px-[16%] dark:bg-bg_dark transition bg-white duration-500 ease-linear fixed top-0 z-[99]">
-        <div className="w-[50%] lg:w-[20%] order-2 lg:order-1 justify-center lg:justify-start">
-          <Logo />
+        <div className="w-auto order-2 lg:order-1 justify-center lg:justify-start">
+          <Logo theme={theme} />
         </div>
-        <nav className="lg:w-[60%] xl:w-[50%] hidden lg:block order-2">
+        <nav className="lg:w-[60%] xl:w-[50%] max-w-[447px] hidden lg:block order-2">
           <ul className="flex items-center justify-between w-full font-manrope">
             {navLinks.map((link) => {
               return (
@@ -85,16 +85,20 @@ const Header = ({ theme, toggleTheme }) => {
             })}
           </ul>
         </nav>
-        <div className="w-[25%] lg:w-[20%] flex items-center lg:justify-end justify-start order-1 lg:order-3">
+
+        {/* {Dark mode toggler} */}
+        <div className="w-auto flex items-center lg:justify-end justify-start order-1 lg:order-3">
           <img
-            className="w-[17px] cursor-pointer"
+            className="w-[32px] cursor-pointer"
             onClick={() => toggleTheme()}
             src={theme ? light_mode : dark_mode}
           />
         </div>
-        <div className="w-[25%] flex items-center justify-end lg:hidden order-3">
+
+        {/* {Mobile navbar toggler} */}
+        <div className="w-auto flex items-center justify-end lg:hidden order-3">
           <img
-            className="w-[17px] cursor-pointer"
+            className="w-[32px] cursor-pointer"
             onClick={() => toggleNav()}
             src={navbar ? close : open}
           />
@@ -108,10 +112,10 @@ const Header = ({ theme, toggleTheme }) => {
         }`}
       >
         <ul className="text-brand-black dark:text-white">
-          <li className="border-b border-brand-gray-200 uppercase font-semibold py-6">
+          <li className="border-b border-brand-gray-200 dark:border-brand-gray-300 uppercase font-semibold py-6">
             <a href="/">Home</a>
           </li>
-          <li className="border-b border-brand-gray-200 uppercase font-semibold py-6 flex flex-col">
+          <li className="border-b border-brand-gray-200 dark:border-brand-gray-300 uppercase font-semibold py-6 flex flex-col">
             <div className="w-full flex justify-between items-center">
               <a href="/">Projects</a>
               <img
@@ -129,10 +133,10 @@ const Header = ({ theme, toggleTheme }) => {
               <MobileDropDown />
             </div>
           </li>
-          <li className="border-b border-brand-gray-200 uppercase font-semibold py-6">
+          <li className="border-b border-brand-gray-200 dark:border-brand-gray-300 uppercase font-semibold py-6">
             <a href="/">About</a>
           </li>
-          <li className="border-b border-brand-gray-200 uppercase font-semibold py-6">
+          <li className="border-b border-brand-gray-200 dark:border-brand-gray-300 uppercase font-semibold py-6">
             <a href="/">My Resume</a>
           </li>
         </ul>

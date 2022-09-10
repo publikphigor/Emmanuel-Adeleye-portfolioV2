@@ -5,7 +5,7 @@ import { star_left, idea } from "../assets";
 // {Dynamic component to render each contribution from contributionsInfo data.}
 function Contribution({ name, description, link, img }) {
   return (
-    <div className="relative flex-shrink-0 w-full md:w-[47.5%] rounded-2xl border border-brand-gray-200 dark:border-brand-gray-300 py-[24px] px-[16px] md:px-[24px]">
+    <div className="relative flex-shrink-0 w-full md:w-[47.5%] rounded-2xl border border-brand-gray-200 dark:border-brand-gray-300 py-[24px] px-[16px] md:px-[24px] bg-white dark:bg-bg_dark transition-colors duration-500 ease-linear">
       <div>
         <h2 className="font-normal font-mangolaine text-[20px] md:text-[40px]">{name}</h2>
         <p className="text-[14px] md:text-[16px] text-brand-gray font-manrope leading-[1.4] mt-[16px] font-normal">
@@ -14,7 +14,7 @@ function Contribution({ name, description, link, img }) {
       </div>
       <a
         href={link}
-        className="block absolute w-[24px] h-[24px] md:w-[40px] md:h-[40px] right-[24px] top-[24px] z-10"
+        className="block absolute w-[32px] h-[32px] md:w-[40px] md:h-[40px] right-[24px] top-[24px] z-10"
       >
         <img src={img} alt="Link Out" className="block w-full h-full object-contain" />
       </a>

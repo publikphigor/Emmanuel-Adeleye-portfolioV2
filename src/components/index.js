@@ -1,4 +1,5 @@
 import Logo from "./Logo";
+import Cursor from "./Cursor";
 import Articles from "./Articles";
 import Contact from "./Contact";
 import Contributions from "./Contributions";
@@ -12,6 +13,7 @@ import SectionHeading from "./SectionHeading";
 
 export {
   Logo,
+  Cursor,
   Articles,
   Contact,
   Contributions,

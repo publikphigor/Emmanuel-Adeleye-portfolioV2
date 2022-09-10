@@ -11,7 +11,7 @@ const Contact = () => {
         <h1 className="font-normal font-mangolaine leading-[1.3] md:leading-[1] text-[20px] md:text-[40px] mb-[16px] md:mb-[24px]">
           Got An Idea? Let's Discuss Now!
         </h1>
-        <a href="/" className="block w-[16px] md:w-[40px] mx-auto">
+        <a href="/" className="block w-[32px] md:w-[40px] mx-auto">
           <img src={email} alt="Contact Emmanuel Adeleye" className="w-full object-contain" />
         </a>
       </div>
@@ -23,7 +23,7 @@ const Contact = () => {
             className="block w-full h-full object-contain"
           />
         </div>
-        <h1 className="text-center font-mangolaine font-normal text-[20px] md:text-[40px] uppercase">
+        <h1 className="text-center font-mangolaine font-normal text-[20px] md:text-[40px] uppercase border-b border-brand-gray-200 dark:border-brand-gray-300 pb-2xl mx-auto w-[272px] md:w-[453px]">
           Thanks for exploring!
         </h1>
       </div>

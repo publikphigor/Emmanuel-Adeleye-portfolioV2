@@ -1,4 +1,13 @@
-import { Header, Hero, Projects, Footer, Contributions, Articles, Contact } from "../components";
+import {
+  Header,
+  Hero,
+  Cursor,
+  Projects,
+  Footer,
+  Contributions,
+  Articles,
+  Contact,
+} from "../components";
 
 const Home = ({ theme, toggleTheme }) => {
   return (
@@ -9,7 +18,7 @@ const Home = ({ theme, toggleTheme }) => {
       <Contributions />
       <Articles />
       <Contact />
-      <Footer />
+      <Footer theme={theme} />
     </div>
   );
 };

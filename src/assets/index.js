@@ -1,3 +1,5 @@
+import logo_light from "./logo_light.svg";
+import logo_dark from "./logo_dark.svg";
 import open from "./open.png";
 import close from "./close.png";
 import emmah from "./emmah_figma.png";
@@ -24,6 +26,8 @@ import outline_dark from "./outline_dark.png";
 import hero_text_dark from "./hero-text_dark.png";
 
 export {
+  logo_dark,
+  logo_light,
   open,
   close,
   emmah,

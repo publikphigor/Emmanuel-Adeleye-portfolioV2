@@ -1,9 +1,14 @@
-const Logo = () => {
+import { logo_dark, logo_light } from "../assets";
+
+const Logo = ({ theme }) => {
   return (
-    <h1 className="font-mangolaine text-3xl font-normal text-brand-black dark:text-white text-center lg:text-left">
-      Emmah
-      <span className="w-[10px] h-[10px] inline-block rounded-full bg-brand-primary" />
-    </h1>
+    <div className="w-[74px] sm:w-[100px] lg:w-[132px]">
+      <img
+        alt="Emmanuel Adeleye Logo"
+        src={theme ? logo_dark : logo_light}
+        className="w-full block object-contain mx-auto"
+      />
+    </div>
   );
 };
 
