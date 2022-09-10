@@ -1,6 +1,6 @@
 import { SectionHeading } from "../components";
 import { styles, contributionsInfo } from "../constants";
-import { star, link_out } from "../assets";
+import { star, idea } from "../assets";
 
 // {Dynamic component to render each contribution from contributionsInfo data.}
 function Contribution({ name, description, link, img }) {
@@ -25,6 +25,11 @@ function Contribution({ name, description, link, img }) {
 const Contributions = () => {
   return (
     <section className="w-full relative" id="contributions">
+      <img
+        className="absolute top-0 right-0 block w-[70px] md:w-[100px]"
+        src={idea}
+        alt="Emmanuel Adeleye Portfolio"
+      />
       <img
         className="absolute top-1/2 left-0 -translate-y-1/2 block w-[70px] md:w-[100px]"
         src={star}

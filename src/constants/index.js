@@ -111,9 +111,41 @@ const contributionsInfo = [
   },
 ];
 
+const articlesInfo = [
+  {
+    id: 1,
+    name: "Best Figma Plugins For Creating Design System",
+    date: "June 12, 2022",
+    category: "UI/UX Design",
+    excerpts:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porttitor metus, at varius arcu eget pharetra, diam dapibus. Massa diam cras eget urna donec orci.",
+    link: "/",
+  },
+
+  {
+    id: 2,
+    name: "Best Figma Plugins For Creating Design System",
+    date: "June 12, 2022",
+    category: "UI/UX Design",
+    excerpts:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porttitor metus, at varius arcu eget pharetra, diam dapibus. Massa diam cras eget urna donec orci.",
+    link: "/",
+  },
+
+  {
+    id: 3,
+    name: "Best Figma Plugins For Creating Design System",
+    date: "June 12, 2022",
+    category: "UI/UX Design",
+    excerpts:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porttitor metus, at varius arcu eget pharetra, diam dapibus. Massa diam cras eget urna donec orci.",
+    link: "/",
+  },
+];
+
 const styles = {
   sectionDefault:
     "bg-white dark:bg-bg_dark text-brand-black dark:text-white w-full px-[16px] md:px-[4%] lg:px-[16%] ease-linear transition-colors duration-500 mt-[100px]",
 };
 
-export { navLinks, projectsDropdown, projectsInfo, contributionsInfo, styles };
+export { navLinks, projectsDropdown, projectsInfo, contributionsInfo, articlesInfo, styles };

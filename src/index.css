@@ -18,6 +18,11 @@
     animation-play-state: paused;
   }
 
+  .star_img2 {
+    transform: translateY(-50%) rotate(180deg);
+    background: url("./assets/star.png") no-repeat fixed contain;
+  }
+
   @keyframes rotateSingle {
     0% {
       transform: translate(-50%, -50%) rotate(0deg);

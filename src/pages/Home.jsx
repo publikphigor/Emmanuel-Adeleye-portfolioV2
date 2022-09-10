@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Header, Hero, Projects, Footer, Contributions } from "../components";
+import { Header, Hero, Projects, Footer, Contributions, Articles } from "../components";
 
 const Home = ({ theme, toggleTheme }) => {
   return (
@@ -8,6 +7,7 @@ const Home = ({ theme, toggleTheme }) => {
       <Hero theme={theme} />
       <Projects />
       <Contributions />
+      <Articles />
       <Footer />
     </div>
   );
