@@ -4,7 +4,8 @@ import emmah from "./emmah_figma.png";
 import laugh from "./laugh.png";
 import light_mode from "./light_mode.png";
 import dark_mode from "./dark_mode.png";
-import star from "./star.png";
+import star_right from "./star_right.png";
+import star_left from "./star_left.png";
 import link_out from "./link_out.png";
 import link_right from "./link_right.png";
 import loader from "./loader.png";
@@ -29,7 +30,8 @@ export {
   laugh,
   light_mode,
   dark_mode,
-  star,
+  star_left,
+  star_right,
   link_out,
   link_right,
   loader,

@@ -1,5 +1,5 @@
 import { articlesInfo, styles } from "../constants";
-import { star, laugh, link_out } from "../assets";
+import { link_out, star_left, star_right } from "../assets";
 import { SectionHeading } from "../components";
 
 function Article({ name, date, category, excerpts, link }) {
@@ -28,20 +28,21 @@ function Article({ name, date, category, excerpts, link }) {
 
 const Articles = () => {
   return (
-    <section className="w-full relative" id="articles">
+    <section className="w-full relative  z-[9]" id="articles">
       {/* {Laugh memoji on the left} */}
-      <img
+      <div className="absolute block w-full h-1/2 bg-[length:100px] bg-[center_left]  bg-no-repeat bg-fixed bg-laugh z-[10]"></div>
+      {/* <img
         className="absolute top-0 lg:top-[230px] lg:left-[40px] object-contain left-0 block w-[100px] md:w-[150px]"
         src={laugh}
         alt="Emmanuel Adeleye Portfolio"
-      />
+      /> */}
       {/* {Laugh memoji on the right} */}
-      <div className="absolute top-1/2 right-0 block w-[70px] md:w-[100px] star_img2"></div>
+      <div className="absolute block w-full h-full bg-[length:100px] bg-[center_right] bg-star_right bg-no-repeat bg-fixed"></div>
       {/* {<img className="" src={star} alt="Emmanuel Adeleye Portfolio" />} */}
       <div className={`${styles.sectionDefault}`}>
         <>
           <SectionHeading h1="Articles" h2="Articles" />
-          <div className="mt-[24px] md:mt-[40px] w-full">
+          <div className="mt-[24px] md:mt-[40px] w-full relative  z-[11]">
             {articlesInfo.map((article) => (
               <Article key={article.id} {...article} />
             ))}

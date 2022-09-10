@@ -1,3 +1,5 @@
+const assetsPath = "./src/assets/";
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: "class",
@@ -16,6 +18,10 @@ module.exports = {
       fontFamily: {
         manrope: ["Manrope", "sans-serif"],
         mangolaine: ["Mangolaine", "sans-serif"],
+      },
+      backgroundImage: {
+        star_right: `url("${assetsPath}star_right.png")`,
+        laugh: `url("${assetsPath}laugh.png")`,
       },
     },
   },

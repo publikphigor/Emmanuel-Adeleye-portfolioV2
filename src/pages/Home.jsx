@@ -1,4 +1,4 @@
-import { Header, Hero, Projects, Footer, Contributions, Articles } from "../components";
+import { Header, Hero, Projects, Footer, Contributions, Articles, Contact } from "../components";
 
 const Home = ({ theme, toggleTheme }) => {
   return (
@@ -8,6 +8,7 @@ const Home = ({ theme, toggleTheme }) => {
       <Projects />
       <Contributions />
       <Articles />
+      <Contact />
       <Footer />
     </div>
   );
