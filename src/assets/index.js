@@ -11,6 +11,8 @@ import star_left from "./star_left.png";
 import link_out from "./link_out.png";
 import link_right from "./link_right.png";
 import loader from "./loader.png";
+import loader_text_light from "./loader_text_light.png";
+import loader_text_dark from "./loader_text_dark.png";
 import namaste from "./namaste.png";
 import idea from "./idea.png";
 import email from "./email_btn.png";
@@ -39,6 +41,8 @@ export {
   link_out,
   link_right,
   loader,
+  loader_text_dark,
+  loader_text_light,
   namaste,
   idea,
   email,

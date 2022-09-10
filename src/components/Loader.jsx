@@ -1,4 +1,10 @@
-import { loader, outline_light, outline_dark } from "../assets";
+import {
+  loader,
+  outline_light,
+  outline_dark,
+  loader_text_dark,
+  loader_text_light,
+} from "../assets";
 
 const Loader = ({ theme }) => {
   return (
@@ -7,6 +13,10 @@ const Loader = ({ theme }) => {
         <img
           src={theme ? outline_dark : outline_light}
           className="absolute w-full h-full object-contain top-1/2 left-1/2 loader_outline"
+        />
+        <img
+          src={theme ? loader_text_dark : loader_text_light}
+          className="absolute w-[120px] h-[120px] object-contain top-1/2 left-1/2 loader_text"
         />
         <img
           src={loader}

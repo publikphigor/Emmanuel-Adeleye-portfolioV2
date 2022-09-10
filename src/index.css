@@ -5,11 +5,13 @@
 @layer components {
   .loader_outline {
     transform: translate(-50%, -50%);
-    animation: rotateItem 5s infinite;
   }
   .loader_image {
     transform: translate(-50%, -50%);
-    animation: scaleUp 5s infinite;
+    animation: scaleUp 1500ms infinite;
+  }
+  .loader_text {
+    animation: rotateSingle 15s infinite;
   }
   .rotator {
     animation: rotateSingle 10s infinite;
@@ -28,10 +30,21 @@
     }
   }
 
+  @keyframes rotateText {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg) scale(0.8);
+    }
+
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg) scale(0.8);
+    }
+  }
+
   @keyframes rotateItem {
     0% {
       transform: translate(-50%, -50%) rotate(0deg) scale(1);
       opacity: 1;
+      filter: brightness(100%);
     }
 
     10% {
@@ -52,6 +65,7 @@
 
     50% {
       transform: translate(-50%, -50%) scale(0.9);
+      filter: brightness(50%);
     }
 
     60% {
@@ -68,6 +82,7 @@
 
     90% {
       transform: translate(-50%, -50%) scale(0.9);
+      filter: brightness(120%);
     }
 
     100% {
