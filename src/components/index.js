@@ -1,3 +1,4 @@
+import Logo from "./Logo";
 import Articles from "./Articles";
 import Contact from "./Contact";
 import Contributions from "./Contributions";
@@ -10,6 +11,7 @@ import Projects from "./Projects";
 import SectionHeading from "./SectionHeading";
 
 export {
+  Logo,
   Articles,
   Contact,
   Contributions,

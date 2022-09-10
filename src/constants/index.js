@@ -143,9 +143,43 @@ const articlesInfo = [
   },
 ];
 
+const footerLinks = [
+  {
+    id: 1,
+    name: "Medium",
+    link: "/",
+  },
+
+  {
+    id: 2,
+    name: "Behance",
+    link: "/",
+  },
+
+  {
+    id: 3,
+    name: "Dribble",
+    link: "/",
+  },
+
+  {
+    id: 4,
+    name: "Linkedin",
+    link: "/",
+  },
+];
+
 const styles = {
   sectionDefault:
     "bg-white dark:bg-bg_dark text-brand-black dark:text-white w-full px-[16px] md:px-[4%] lg:px-[16%] ease-linear transition-colors duration-500 mt-[100px]",
 };
 
-export { navLinks, projectsDropdown, projectsInfo, contributionsInfo, articlesInfo, styles };
+export {
+  navLinks,
+  projectsDropdown,
+  projectsInfo,
+  contributionsInfo,
+  articlesInfo,
+  footerLinks,
+  styles,
+};

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { light_mode, dark_mode, close, open, plus, close_circle } from "../assets";
 import { navLinks } from "../constants";
-import { NavbarDropdown } from "../components";
+import { NavbarDropdown, Logo } from "../components";
 
 // {Creating dynamic navigation menus that returns different jsx depending on which has a dropdown in its data. Passing the dropdown toggle function as a prop ==> setMobileDropdown}
 function NavLink({ name, link, img, active, setMobileDropdown }) {
@@ -67,10 +67,7 @@ const Header = ({ theme, toggleTheme }) => {
     <header>
       <div className="flex justify-between items-center w-full py-6 px-[16px] md:px-[4%] lg:px-[16%] dark:bg-bg_dark transition bg-white duration-500 ease-linear fixed top-0 z-[99]">
         <div className="w-[50%] lg:w-[20%] order-2 lg:order-1 justify-center lg:justify-start">
-          <h1 className="font-mangolaine text-3xl font-normal text-brand-black dark:text-white text-center lg:text-left">
-            Emmah
-            <span className="w-[10px] h-[10px] inline-block rounded-full bg-brand-primary" />
-          </h1>
+          <Logo />
         </div>
         <nav className="lg:w-[60%] xl:w-[50%] hidden lg:block order-2">
           <ul className="flex items-center justify-between w-full font-manrope">

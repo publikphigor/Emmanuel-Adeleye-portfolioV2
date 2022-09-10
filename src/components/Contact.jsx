@@ -20,7 +20,7 @@ const Contact = () => {
           <img
             src={namaste}
             alt="Emmanuel Adeleye saying Namaste"
-            classname="block w-full h-full object-contain"
+            className="block w-full h-full object-contain"
           />
         </div>
         <h1 className="text-center font-mangolaine font-normal text-[20px] md:text-[40px] uppercase">
