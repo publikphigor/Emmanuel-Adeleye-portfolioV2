@@ -1,5 +1,5 @@
 import { articlesInfo, styles } from "../constants";
-import { link_out, star_left, star_right } from "../assets";
+import { link_out, star_left, star_right, laugh } from "../assets";
 import { SectionHeading } from "../components";
 
 function Article({ name, date, category, excerpts, link }) {
@@ -30,15 +30,20 @@ const Articles = () => {
   return (
     <section className="w-full relative  z-[9]" id="articles">
       {/* {Laugh memoji on the left} */}
-      <div className="absolute block w-full h-1/2 bg-[length:100px] bg-[center_left]  bg-no-repeat bg-fixed bg-laugh z-[10]"></div>
-      {/* <img
-        className="absolute top-0 lg:top-[230px] lg:left-[40px] object-contain left-0 block w-[100px] md:w-[150px]"
+      <img
+        className="absolute top-0 lg:top-[230px] lg:left-[40px] object-contain left-0 block w-[100px]"
         src={laugh}
         alt="Emmanuel Adeleye Portfolio"
-      /> */}
+      />
+      {/* {<div className="absolute block w-full h-1/2 bg-[length:100px] bg-[center_left]  bg-no-repeat bg-fixed bg-laugh z-[10]"></div>} */}
+
       {/* {Laugh memoji on the right} */}
-      <div className="absolute block w-full h-full bg-[length:100px] bg-[center_right] bg-star_right bg-no-repeat bg-fixed"></div>
-      {/* {<img className="" src={star} alt="Emmanuel Adeleye Portfolio" />} */}
+      <img
+        className="absolute top-1/2 -translate-y-1/2 right-0 object-contain block w-[100px]"
+        src={star_right}
+        alt="Emmanuel Adeleye Portfolio"
+      />
+      {/* {<div className="absolute block w-full h-full bg-[length:100px] bg-[center_right] bg-star_right bg-no-repeat bg-fixed"></div>} */}
       <div className={`${styles.sectionDefault}`}>
         <>
           <SectionHeading h1="Articles" h2="Articles" />
