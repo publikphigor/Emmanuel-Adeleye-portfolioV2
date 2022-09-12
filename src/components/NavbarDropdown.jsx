@@ -3,7 +3,7 @@ import { projectsDropdown } from "../constants";
 const NavbarDropdown = ({ toggle, setToggle }) => {
   return (
     <div
-      className={`hidden  justify-between items-center w-[68%] mx-auto fixed z-[10] left-[50%] -translate-x-[50%] top-[120px] p-[32px] bg-white transition-all duration-500 dark:bg-bg_dark text-black dark:text-white ${
+      className={`hidden  justify-between items-center w-[68%] mx-auto fixed z-[10] left-[50%] -translate-x-[50%] top-[90px] p-[32px] bg-white transition-all duration-500 dark:bg-bg_dark text-black dark:text-white ${
         toggle ? "opacity-100 lg:flex" : "opacity-0"
       }`}
       onMouseLeave={() => setToggle(false)}
