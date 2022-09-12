@@ -26,12 +26,12 @@ const Contributions = () => {
   return (
     <section className="w-full relative" id="contributions">
       <img
-        className="absolute top-0 right-0 block w-[70px] md:w-[100px]"
+        className="absolute -top-[20px] md:top-0 right-0 block w-[50px] md:w-[100px]"
         src={idea}
         alt="Emmanuel Adeleye Portfolio"
       />
       <img
-        className="absolute top-1/2 left-0 -translate-y-1/2 block w-[70px] md:w-[100px]"
+        className="absolute top-[50%] md:top-1/2 left-0 md:-translate-y-1/2 block w-[50px] md:w-[100px]"
         src={star_left}
         alt="Emmanuel Adeleye Portfolio"
       />

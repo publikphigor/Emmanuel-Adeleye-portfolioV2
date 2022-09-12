@@ -23,7 +23,7 @@ const Contact = () => {
             className="block w-full h-full object-contain"
           />
         </div>
-        <h1 className="text-center font-mangolaine font-normal text-[20px] md:text-[40px] uppercase border-b border-brand-gray-200 dark:border-brand-gray-300 pb-2xl mx-auto w-[272px] md:w-[453px]">
+        <h1 className="text-center font-mangolaine font-normal text-[20px] md:text-[40px] uppercase mx-auto">
           Thanks for exploring!
         </h1>
       </div>

@@ -12,8 +12,8 @@ function FooterLink({ name, link }) {
 
 const Footer = ({ theme }) => {
   return (
-    <footer className="w-full mt-[56px] py-6 px-[16px] md:px-[4%] lg:px-[16%]">
-      <div className="flex flex-col items-center md:flex-row justify-between">
+    <footer className="w-full mt-[24px] px-[16px] md:px-[4%] lg:px-[16%] ">
+      <div className="flex flex-col items-center md:flex-row justify-between border-t border-brand-gray-200 dark:border-brand-gray-300 py-6">
         <Logo theme={theme} />
         <nav className="w-full mt-[24px] md:w-[60%] lg:w-[50%] md:mt-0">
           <ul className="w-full flex item-center gap-[24px] md:gap-[40px] justify-center md:justify-end">

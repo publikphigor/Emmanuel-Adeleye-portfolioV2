@@ -31,7 +31,7 @@ const Articles = () => {
     <section className="w-full relative  z-[9]" id="articles">
       {/* {Laugh memoji on the left} */}
       <img
-        className="absolute top-0 lg:top-[230px] lg:left-[40px] object-contain left-0 block w-[100px]"
+        className="absolute -top-[5px] lg:top-[230px] lg:left-[40px] object-contain left-0 block w-[50px] md:w-[100px]"
         src={laugh}
         alt="Emmanuel Adeleye Portfolio"
       />
@@ -39,7 +39,7 @@ const Articles = () => {
 
       {/* {Laugh memoji on the right} */}
       <img
-        className="absolute top-1/2 -translate-y-1/2 right-0 object-contain block w-[100px]"
+        className="absolute top-[60%] md:top-1/2 md:-translate-y-1/2 right-0 object-contain block w-[50px] md:w-[100px]"
         src={star_right}
         alt="Emmanuel Adeleye Portfolio"
       />
@@ -54,7 +54,7 @@ const Articles = () => {
           </div>
           <div className="mt-[32px] md:mt-[48px]">
             <a
-              className="uppercase flex items-center justify-center gap-[16px] md:gap-[24px] font-medium text-[12px] md:text-[16px] text-brand-gray"
+              className="uppercase flex items-center justify-center gap-[16px] md:gap-[24px] font-medium text-[12px] md:text-[16px] text-brand-gray-300 hover:text-brand-gray w-auto transition-colors duration-500 ease-linear mb-[16px]"
               href="/"
             >
               Read More on Medium
