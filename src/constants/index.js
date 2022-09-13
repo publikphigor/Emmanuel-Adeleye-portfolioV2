@@ -1,5 +1,13 @@
+/**
+ *
+ * This file contains the data displayed on the UI. It can be easily edited without altering the code and it updates autoatically on the UI.
+ *
+ */
+
+// Importing images
 import { dropdown, projects, link_out } from "../assets";
 
+// Drives the main navigation menu
 const navLinks = [
   {
     id: "home",
@@ -28,6 +36,7 @@ const navLinks = [
   },
 ];
 
+// Drives the dropdown of projects.
 const projectsDropdown = [
   {
     id: 1,
@@ -46,6 +55,7 @@ const projectsDropdown = [
   },
 ];
 
+// Drives the projects section
 const projectsInfo = [
   {
     id: 1,
@@ -73,6 +83,7 @@ const projectsInfo = [
   },
 ];
 
+// Drives the contributions section
 const contributionsInfo = [
   {
     id: 1,
@@ -111,6 +122,7 @@ const contributionsInfo = [
   },
 ];
 
+// Drives the articles section
 const articlesInfo = [
   {
     id: 1,
@@ -143,6 +155,7 @@ const articlesInfo = [
   },
 ];
 
+// Drives the naviagtion menu on the footer
 const footerLinks = [
   {
     id: 1,
@@ -169,11 +182,13 @@ const footerLinks = [
   },
 ];
 
+// TailwindCSS classes to be applied to all sections for uniformity.
 const styles = {
   sectionDefault:
     "bg-white dark:bg-bg_dark text-brand-black dark:text-white w-full px-[16px] md:px-[4%] lg:px-[16%] ease-linear transition-colors duration-500 mt-[100px]",
 };
 
+// Export all as a single object
 export {
   navLinks,
   projectsDropdown,

@@ -1,3 +1,9 @@
+/**
+ *
+ * Importing all assets and exporting them as a single object.
+ *
+ */
+
 import logo_light from "./logo_light.svg";
 import logo_dark from "./logo_dark.svg";
 import open from "./open.png";

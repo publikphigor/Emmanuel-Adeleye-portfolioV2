@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Loader } from "./components";
 import Home from "./pages/Home";
 
+// Define the App component, initialize state and pass down the theme state and setState function as a prop
+
 function App() {
   // Dark Mode Props
   const [darkMode, setDarkMode] = useState(true);

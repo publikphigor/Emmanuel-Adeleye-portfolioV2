@@ -110,7 +110,7 @@ const Header = ({ theme, toggleTheme }) => {
       {/* {Mobile Navbar} */}
       <div
         className={`block lg:hidden bg-white dark:bg-bg_dark w-full transition-[transform_color_background-color] duration-500 ease-linear h-screen fixed top-[64px] left-0 px-[24px] py-[20px] z-[90] ${
-          navbar ? "translate-y-0" : "-translate-y-[300%]"
+          navbar ? "translate-y-0" : "-translate-y-[150%]"
         }`}
       >
         <ul className="text-brand-black dark:text-white">

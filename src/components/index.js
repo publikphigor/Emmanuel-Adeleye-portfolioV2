@@ -1,3 +1,9 @@
+/**
+ *
+ * Importing all components and exporting them as a single object.
+ *
+ */
+
 import Logo from "./Logo";
 import Cursor from "./Cursor";
 import Articles from "./Articles";

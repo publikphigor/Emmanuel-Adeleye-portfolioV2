@@ -9,6 +9,7 @@ import {
   Contact,
 } from "../components";
 
+// Define the Home component and pass down the theme state and setState function as a prop
 const Home = ({ theme, toggleTheme }) => {
   return (
     <div>
