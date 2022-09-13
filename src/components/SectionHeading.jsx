@@ -1,3 +1,4 @@
+// Component for the heading of each section that's uniform
 const SectionHeading = ({ h1, h2 }) => {
   return (
     <>

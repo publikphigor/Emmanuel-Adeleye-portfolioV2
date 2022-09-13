@@ -2,6 +2,8 @@ import { articlesInfo, styles } from "../constants";
 import { link_out, star_left, star_right, laugh } from "../assets";
 import { SectionHeading } from "../components";
 
+// // {Dynamic component to render each article from articlesInfo data.}
+
 function Article({ name, date, category, excerpts, link }) {
   return (
     <div className="flex flex-col md:flex-row text-center md:text-left w-full rounded-2xl border border-brand-gray-200 dark:border-brand-gray-300 mb-[24px] md:mb-[40px] bg-white dark:bg-bg_dark  transition-colors duration-500 ease-linear">
@@ -26,6 +28,7 @@ function Article({ name, date, category, excerpts, link }) {
   );
 }
 
+// Articles section
 const Articles = () => {
   return (
     <section className="w-full relative  z-[9]" id="articles">

@@ -110,7 +110,7 @@ const Header = ({ theme, toggleTheme }) => {
       {/* {Mobile Navbar} */}
       <div
         className={`block lg:hidden bg-white dark:bg-bg_dark w-full transition-[transform_color_background-color] duration-500 ease-linear h-screen fixed top-[64px] left-0 px-[24px] py-[20px] z-[90] ${
-          navbar ? "translate-y-0" : "-translate-y-[150%]"
+          navbar ? "translate-y-0" : "-translate-y-[110%]"
         }`}
       >
         <ul className="text-brand-black dark:text-white">
@@ -122,12 +122,13 @@ const Header = ({ theme, toggleTheme }) => {
               <a href="/">Projects</a>
               <img
                 src={mobileDropdown ? close_circle : plus}
-                alt="Mobile dropdown"
                 className="w-[24px] h-[24px] object-contain cursor-pointer"
                 onClick={() => toggleDropdown()}
                 alt="Dropdown toggler"
               />
             </div>
+
+            {/* {Projects/case study dropdown on mobile} */}
             <div
               className={`transition-[max-height] overflow-hidden ${
                 mobileDropdown ? "max-h-[200px]" : "max-h-0"
