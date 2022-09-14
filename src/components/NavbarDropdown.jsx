@@ -2,9 +2,12 @@ import { useState } from "react";
 import { link_out } from "../assets";
 import { projectsDropdown } from "../constants";
 
+// Component for each project in the projects dropdown
 function SingleProject({ name, img, link }) {
+  // Initialize state to show the explore div onMouseEnter
   const [hovered, setHovered] = useState(false);
 
+  // Switch between hover and !hovered
   function handleClick() {
     setHovered((prev) => !prev);
   }
