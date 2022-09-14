@@ -23,8 +23,11 @@ function SingleProject({ name, img, link }) {
           hovered ? "translate-y-0" : "translate-y-[100%]"
         }`}
       >
-        <a href={link} className="text-[14px] uppercase flex gap-[16px] items-center mb-[32px]">
-          Explore <img src={link_out} alt="Link Out" className="w-[16px]" />
+        <a
+          href={link}
+          className="text-[14px] uppercase flex gap-[16px] items-center mb-[32px] text-white"
+        >
+          Explore <img src={link_out} alt="Link Out" className="w-[32px]" />
         </a>
       </div>
       <h1 className="text-center font-manrope font-normal uppercase text-[24px] mb-[36px] leading-[1]">
