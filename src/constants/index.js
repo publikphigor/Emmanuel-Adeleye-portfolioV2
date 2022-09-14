@@ -42,16 +42,22 @@ const projectsDropdown = [
     id: 1,
     name: "Case Studies",
     img: projects,
+    hovered: false,
+    link: "/",
   },
   {
     id: 2,
     name: "Dribble Shots",
     img: projects,
+    hovered: false,
+    link: "/",
   },
   {
     id: 3,
     name: "3D & Illus",
     img: projects,
+    hovered: false,
+    link: "/",
   },
 ];
 
