@@ -14,6 +14,18 @@ import { styles } from "../constants";
 const Hero = ({ theme }) => {
   const el = useRef(null);
 
+  useLayoutEffect(() => {
+    let heroAnim = gsap.from(el.current, {
+      opacity: 0,
+      duration: 1,
+      immediateRender: false,
+    });
+
+    return () => {
+      heroAnim.revert();
+    };
+  }, [theme]);
+
   return (
     <section ref={el} className={`${styles.sectionDefault} relative mt-[130px] top-0`} id="hero">
       <div className="w-full overflow-hidden">
