@@ -35,14 +35,26 @@ const Contributions = () => {
   const c_cont = useRef(null);
   useEffect(() => {
     let ctx = gsap.context(() => {
-      gsap.from("[data-contribution]", {
+      gsap.set("[data-contribution]", {
         scrollTrigger: {
           trigger: c_cont.current,
-          start: "top 80%",
-          toggleActions: "play completed reverse reverse",
+          start: "top 100%",
         },
         opacity: 0,
         y: 100,
+        duration: 1,
+        stagger: 0.5,
+        ease: "Power3.out",
+        immediateRender: false,
+      });
+      gsap.to("[data-contribution]", {
+        scrollTrigger: {
+          trigger: c_cont.current,
+          start: "top 70%",
+          toggleActions: "play completed reverse reverse",
+        },
+        opacity: 1,
+        y: 0,
         duration: 1,
         stagger: 0.5,
         ease: "Power3.out",
