@@ -31,7 +31,7 @@ const Contributions = () => {
         alt="Emmanuel Adeleye Portfolio"
       />
       <img
-        className="absolute top-[50%] md:top-1/2 left-0 md:-translate-y-1/2 block w-[50px] md:w-[100px]"
+        className="absolute top-[48.5%] md:top-1/2 left-0 md:-translate-y-1/2 block w-[50px] md:w-[100px]"
         src={star_left}
         alt="Emmanuel Adeleye Portfolio"
       />
