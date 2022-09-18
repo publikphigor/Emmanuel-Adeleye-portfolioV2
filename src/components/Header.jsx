@@ -11,7 +11,7 @@ function NavLink({ name, link, img, active, setMobileDropdown }) {
         className={`uppercase text-base text-brand-gray font-medium hover:text-brand-black dark:hover:text-white transition duration-500 font-manrope ${
           active ? "text-brand-black dark:text-white" : "text-brand-gray"
         }`}
-        onMouseEnter={() => setMobileDropdown(true)}
+        onClick={() => setMobileDropdown((prev) => !prev)}
       >
         <p href={link} className="flex items-center cursor-pointer">
           {name} <img className="inline-block w-[20px]" src={img} alt={name} />
@@ -147,9 +147,7 @@ const Header = ({ theme, toggleTheme }) => {
       </div>
 
       {/* {Show dropdown on desktop} */}
-      <>
-        <NavbarDropdown toggle={mobileDropdown} setToggle={setMobileDropdown} />
-      </>
+      <NavbarDropdown toggle={mobileDropdown} setToggle={setMobileDropdown} />
     </header>
   );
 };

@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useLayoutEffect, useRef } from "react";
+import { gsap, Power3 } from "gsap";
 import { link_out } from "../assets";
 import { projectsDropdown } from "../constants";
 
@@ -14,7 +15,8 @@ function SingleProject({ name, img, link }) {
 
   return (
     <div
-      className="border-[0.5px] border-brand-gray-200 dark:border-brand-gray-300 rounded-[16px] py-[16px] max-h-[270px] max-w-[30%] relative overflow-hidden"
+      data-nav-drop
+      className="border-[0.5px] border-brand-gray-200 dark:border-brand-gray-300 rounded-[16px] py-[16px] max-h-[270px] max-w-[30%] relative overflow-hidden -translate-y-[100%] opacity-[0.5]"
       onMouseEnter={handleClick}
       onMouseLeave={handleClick}
     >
@@ -41,11 +43,69 @@ function SingleProject({ name, img, link }) {
 }
 
 const NavbarDropdown = ({ toggle, setToggle }) => {
+  const navContainer = useRef(null);
+
+  useLayoutEffect(() => {
+    console.log(toggle);
+    let navTl;
+    let ctx = gsap.context(() => {
+      navTl = gsap.timeline();
+      if (toggle) {
+        navTl
+          .to(navContainer.current, {
+            opacity: 1,
+            y: 0,
+            duration: 0.5,
+            ease: Power3.easeOut,
+            immediateRender: false,
+          })
+          .to(
+            "[data-nav-drop]",
+            {
+              opacity: 1,
+              y: 0,
+              duration: 1,
+              stagger: 0.2,
+              ease: Power3.easeOut,
+              immediateRender: false,
+            },
+            "-=.5"
+          );
+      }
+      if (!toggle) {
+        gsap
+          .timeline()
+          .to("[data-nav-drop]", {
+            opacity: 0,
+            y: "-100%",
+            duration: 1,
+            stagger: 0.2,
+            ease: Power3.easeOut,
+            immediateRender: false,
+          })
+          .to(
+            navContainer.current,
+            {
+              opacity: 0,
+              y: "-100%",
+              duration: 0.5,
+              ease: Power3.easeOut,
+              immediateRender: false,
+            },
+            "-=.5"
+          );
+      }
+    }, navContainer);
+  }, [toggle]);
+
+  // {className={`hidden  justify-between items-center w-[68%] mx-auto fixed z-[10] left-[50%] -translate-x-[50%] top-[90px] p-[32px] bg-white transition-all duration-500 dark:bg-bg_dark text-black dark:text-white ${
+  //   toggle ? "opacity-100 lg:flex" : "opacity-0"
+  // }`}}
+
   return (
     <div
-      className={`hidden  justify-between items-center w-[68%] mx-auto fixed z-[10] left-[50%] -translate-x-[50%] top-[90px] p-[32px] bg-white transition-all duration-500 dark:bg-bg_dark text-black dark:text-white ${
-        toggle ? "opacity-100 lg:flex" : "opacity-0"
-      }`}
+      ref={navContainer}
+      className={`hidden lg:flex justify-between items-center w-[68%] mx-auto fixed z-[10] left-[50%] -translate-x-[50%] -translate-y-[100%] top-[90px] p-[32px] bg-white transition-colors duration-500 dark:bg-bg_dark text-black dark:text-white`}
       onMouseLeave={() => setToggle(false)}
     >
       {projectsDropdown.map((project) => (
