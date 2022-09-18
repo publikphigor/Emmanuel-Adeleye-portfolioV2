@@ -1,3 +1,5 @@
+import { useRef, useLayoutEffect } from "react";
+import { gsap } from "gsap";
 import {
   emmah,
   arrow_light,
@@ -10,8 +12,10 @@ import {
 import { styles } from "../constants";
 
 const Hero = ({ theme }) => {
+  const el = useRef(null);
+
   return (
-    <section className={`${styles.sectionDefault} relative mt-[130px]`} id="hero">
+    <section ref={el} className={`${styles.sectionDefault} relative mt-[130px] top-0`} id="hero">
       <div className="w-full overflow-hidden">
         <img className="block w-[220px] mx-auto" src={emmah} alt="Emmanuel Adeleye" />
         <h1 className="text-center font-mangolaine text-[20px] sm:text-[40px] uppercase">
