@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "react";
-import { gsap } from "gsap";
+import { gsap, Power3 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SectionHeading } from "../components";
 import { styles, contributionsInfo } from "../constants";
@@ -42,22 +42,19 @@ const Contributions = () => {
         },
         opacity: 0,
         y: 100,
-        duration: 1,
-        stagger: 0.5,
-        ease: "Power3.out",
         immediateRender: false,
       });
       gsap.to("[data-contribution]", {
         scrollTrigger: {
           trigger: c_cont.current,
           start: "top 70%",
-          toggleActions: "play completed reverse reverse",
+          toggleActions: "play none none reverse",
         },
         opacity: 1,
         y: 0,
         duration: 1,
-        stagger: 0.5,
-        ease: "Power3.out",
+        stagger: 0.2,
+        ease: Power3.out,
         immediateRender: false,
       });
     }, c_cont);
