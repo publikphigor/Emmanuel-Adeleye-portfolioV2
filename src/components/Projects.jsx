@@ -1,3 +1,4 @@
+import { useRef, useEffect } from "react";
 import { projectsInfo } from "../constants";
 import { styles } from "../constants";
 import { link_right } from "../assets";
@@ -33,9 +34,13 @@ function Project({ img, link, name, description }) {
 }
 
 // {Main Projects section}
-const Projects = () => {
+const Projects = ({ nextSection, setNextSection }) => {
+  nextSection = useRef(null);
+  useEffect(() => {
+    setNextSection(nextSection.current);
+  }, []);
   return (
-    <section id="projects" className={`${styles.sectionDefault}`}>
+    <section id="projects" className={`${styles.sectionDefault}`} ref={nextSection}>
       <div className="border-[0.5px] rounded-2xl border-brand-gray-200 dark:border-brand-gray-300 py-[40px] px-[24px]">
         <SectionHeading h1="Featured projects" h2="Projects" />
         <div className="flex gap-[24px] sm:gap-[41px] mt-10 overflow-x-auto">

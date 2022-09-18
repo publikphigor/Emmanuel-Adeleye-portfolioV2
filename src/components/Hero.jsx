@@ -1,5 +1,5 @@
 import { useRef, useLayoutEffect } from "react";
-import { gsap } from "gsap";
+import { gsap, Power4, Power3 } from "gsap";
 import {
   emmah,
   arrow_light,
@@ -11,20 +11,29 @@ import {
 } from "../assets";
 import { styles } from "../constants";
 
-const Hero = ({ theme }) => {
+const Hero = ({ theme, nextSection }) => {
   const el = useRef(null);
 
   useLayoutEffect(() => {
-    let heroAnim = gsap.from(el.current, {
-      opacity: 0,
-      duration: 1,
-      immediateRender: false,
-    });
+    let ctx = gsap.context(() => {
+      gsap
+        .timeline()
+        .set("h1", {
+          "clip-path": "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+        })
+        .set("[data-hero-text]", { opacity: 0, y: 30 })
+        .to("h1", {
+          "clip-path": "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
+          duration: 2,
+          ease: Power4.easeInOut,
+        })
+        .to("[data-hero-text]", { opacity: 1, y: 0, duration: 0.5, ease: Power3.out }, "-=1");
+    }, el);
 
     return () => {
-      heroAnim.revert();
+      ctx.revert();
     };
-  }, [theme]);
+  }, []);
 
   return (
     <section ref={el} className={`${styles.sectionDefault} relative mt-[130px] top-0`} id="hero">
@@ -38,7 +47,10 @@ const Hero = ({ theme }) => {
           <span className="sm:w-[21px] sm:h-[21px] w-[10px] h-[10px] inline-block rounded-full bg-brand-primary" />{" "}
           <span>Designer (UI/UX)</span>
         </h1>
-        <p className="font-normal font-manrope text-[14px] sm:text-[16px] text-center text-brand-gray">
+        <p
+          className="font-normal font-manrope text-[14px] sm:text-[16px] text-center text-brand-gray"
+          data-hero-text
+        >
           I love creating user-friendly products for ambitious businesses. <br />
           Currently working remotely from Nigeria.
         </p>
