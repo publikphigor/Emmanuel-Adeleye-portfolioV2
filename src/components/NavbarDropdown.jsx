@@ -1,7 +1,9 @@
 import { useState, useLayoutEffect, useRef } from "react";
-import { gsap, Power3 } from "gsap";
 import { link_out } from "../assets";
 import { projectsDropdown } from "../constants";
+
+// GSAP
+import { gsap, Power3 } from "gsap";
 
 // Component for each project in the projects dropdown
 function SingleProject({ name, img, link }) {
@@ -46,7 +48,6 @@ const NavbarDropdown = ({ toggle, setToggle }) => {
   const navContainer = useRef(null);
 
   useLayoutEffect(() => {
-    console.log(toggle);
     let navTl;
     let ctx = gsap.context(() => {
       navTl = gsap.timeline();
@@ -96,6 +97,29 @@ const NavbarDropdown = ({ toggle, setToggle }) => {
           );
       }
     }, navContainer);
+
+    return () => {
+      gsap
+        .timeline()
+        .to("[data-nav-drop]", {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          stagger: 0.2,
+          ease: Power3.easeOut,
+        })
+        .to(
+          navContainer.current,
+          {
+            opacity: 1,
+            y: 0,
+            x: "-50%",
+            duration: 0.5,
+            ease: Power3.easeOut,
+          },
+          "-=0.5"
+        );
+    };
   }, [toggle]);
 
   // {className={`hidden  justify-between items-center w-[68%] mx-auto fixed z-[10] left-[50%] -translate-x-[50%] top-[90px] p-[32px] bg-white transition-all duration-500 dark:bg-bg_dark text-black dark:text-white ${

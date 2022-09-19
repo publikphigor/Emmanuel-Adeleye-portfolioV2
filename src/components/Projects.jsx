@@ -4,6 +4,11 @@ import { styles } from "../constants";
 import { link_right } from "../assets";
 import { SectionHeading } from "../components";
 
+// GSAP
+import { gsap, Power4, Power3 } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 // {Dynamic component generated from projectsInfo data to render each project.}
 function Project({ img, link, name, description }) {
   return (
@@ -41,7 +46,7 @@ const Projects = ({ nextSection, setNextSection }) => {
   }, []);
   return (
     <section id="projects" className={`${styles.sectionDefault}`} ref={nextSection}>
-      <div className="border-[0.5px] rounded-2xl border-brand-gray-200 dark:border-brand-gray-300 py-[40px] px-[24px]">
+      <div className="border-[0.5px] rounded-2xl border-brand-gray-200 dark:border-brand-gray-300 py-[40px] px-[24px] relative z-10 bg-white dark:bg-brand-black">
         <SectionHeading h1="Featured projects" h2="Projects" />
         <div className="flex gap-[24px] sm:gap-[41px] mt-10 overflow-x-auto">
           {projectsInfo.map((project) => {

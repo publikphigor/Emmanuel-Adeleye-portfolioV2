@@ -64,8 +64,8 @@ const Header = ({ theme, toggleTheme }) => {
   }
 
   return (
-    <header>
-      <div className="flex justify-between items-center w-full py-6 px-[16px] md:px-[4%] lg:px-[16%] dark:bg-bg_dark transition bg-white duration-500 ease-linear fixed top-0 z-[99]">
+    <header className="fixed top-0 z-[100] w-full">
+      <div className="flex justify-between items-center w-full py-6 px-[16px] md:px-[4%] lg:px-[16%] dark:bg-bg_dark transition bg-white duration-500 ease-linear relative z-[11]">
         <div className="w-auto order-2 lg:order-1 justify-center lg:justify-start">
           <Logo theme={theme} />
         </div>

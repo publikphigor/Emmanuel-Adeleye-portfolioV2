@@ -14,7 +14,7 @@ import {
 const Home = ({ theme, toggleTheme }) => {
   let [nextSection, setNextSection] = useState(null);
   return (
-    <div>
+    <>
       <Header theme={theme} toggleTheme={toggleTheme} />
       <Hero theme={theme} nextSection={nextSection} />
       <Projects nextSection={nextSection} setNextSection={setNextSection} />
@@ -22,7 +22,7 @@ const Home = ({ theme, toggleTheme }) => {
       <Articles />
       <Contact />
       <Footer theme={theme} />
-    </div>
+    </>
   );
 };
 
