@@ -25,9 +25,11 @@ function App() {
   }, []);
 
   return (
-    <div className="dark:bg-bg_dark h-screen w-full bg-white">
+    <>
       {loading ? (
-        <Loader theme={darkMode} />
+        <div className="dark:bg-bg_dark h-screen w-full bg-white">
+          <Loader theme={darkMode} />
+        </div>
       ) : (
         <Router>
           <Routes>
@@ -35,7 +37,7 @@ function App() {
           </Routes>
         </Router>
       )}
-    </div>
+    </>
   );
 }
 
