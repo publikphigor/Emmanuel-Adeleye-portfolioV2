@@ -61,7 +61,7 @@ const Hero = ({ theme }) => {
   }, [theme]);
 
   return (
-    <div ref={el} className="relative h-[100vh]">
+    <div ref={el} className="relative h-[70vh] lg:h-[100vh]">
       <section id="hero" className={`${styles.sectionDefault} relative mt-[130px] top-0`}>
         <div className="w-full overflow-hidden">
           <img className="block w-[220px] mx-auto hero-img" src={emmah} alt="Emmanuel Adeleye" />
