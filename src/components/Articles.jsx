@@ -57,6 +57,7 @@ const Articles = () => {
           scrollTrigger: {
             trigger: a_cont.current,
             start: "top 70%",
+            end: "bottom 10%",
             toggleActions: "play none restart reverse",
           },
         })

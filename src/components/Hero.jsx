@@ -81,7 +81,7 @@ const Hero = ({ theme }) => {
             Currently working remotely from Nigeria.
           </p>
         </div>
-        <a className="block w-[139px] h-[139px] mx-auto mt-[64px] relative" href="/">
+        <a className="block w-[139px] h-[139px] mx-auto mt-[64px] relative" href="/#projects">
           <img
             src={theme ? outline_dark : outline_light}
             alt="outline"
