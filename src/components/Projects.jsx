@@ -52,7 +52,7 @@ const Projects = () => {
         .timeline({
           scrollTrigger: {
             trigger: p_cont.current,
-            start: "top 50%",
+            start: "top 80%",
             toggleActions: "play none restart reverse",
           },
         })

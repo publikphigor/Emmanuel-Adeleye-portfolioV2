@@ -49,7 +49,7 @@ const Contributions = () => {
         .timeline({
           scrollTrigger: {
             trigger: c_cont.current,
-            start: "top 70%",
+            start: "top 80%",
             toggleActions: "play none restart reverse",
           },
         })
