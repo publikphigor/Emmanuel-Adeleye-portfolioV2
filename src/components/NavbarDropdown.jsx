@@ -48,6 +48,8 @@ const NavbarDropdown = ({ toggle, setToggle }) => {
   const navContainer = useRef(null);
 
   useLayoutEffect(() => {
+    // ==== GSAP animations ====
+
     let navTl;
     let ctx = gsap.context(() => {
       navTl = gsap.timeline();

@@ -17,8 +17,9 @@ import {
 import { styles } from "../constants";
 
 const Hero = ({ theme }) => {
-  const el = useRef(null);
+  // ==== GSAP animations ====
 
+  const el = useRef(null);
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
       ScrollTrigger.create({

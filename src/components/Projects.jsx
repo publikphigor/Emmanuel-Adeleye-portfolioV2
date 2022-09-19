@@ -40,6 +40,7 @@ function Project({ img, link, name, description }) {
 
 // {Main Projects section}
 const Projects = () => {
+  // ==== GSAP animations ====
   const p_cont = useRef(null);
   useEffect(() => {
     let ctx = gsap.context(() => {

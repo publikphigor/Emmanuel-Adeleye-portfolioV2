@@ -32,6 +32,7 @@ function Contribution({ name, description, link, img }) {
 }
 
 const Contributions = () => {
+  // ==== GSAP animations ====
   const c_cont = useRef(null);
   useEffect(() => {
     let ctx = gsap.context(() => {
