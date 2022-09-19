@@ -1,11 +1,11 @@
 import { useRef, useEffect } from "react";
-import { gsap, Power3 } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SectionHeading } from "../components";
 import { styles, contributionsInfo } from "../constants";
 import { star_left, idea } from "../assets";
 
-// Register scrolltrigger
+// GSAP
+import { gsap, Power3 } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 // {Dynamic component to render each contribution from contributionsInfo data.}
@@ -35,28 +35,38 @@ const Contributions = () => {
   const c_cont = useRef(null);
   useEffect(() => {
     let ctx = gsap.context(() => {
+      gsap.set("[data-section-heading]", {
+        clipPath:
+          "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)",
+        opacity: 0,
+      });
       gsap.set("[data-contribution]", {
-        scrollTrigger: {
-          trigger: c_cont.current,
-          start: "top 100%",
-        },
         opacity: 0,
         y: 100,
         immediateRender: false,
       });
-      gsap.to("[data-contribution]", {
-        scrollTrigger: {
-          trigger: c_cont.current,
-          start: "top 70%",
-          toggleActions: "play none none reverse",
-        },
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        stagger: 0.2,
-        ease: Power3.out,
-        immediateRender: false,
-      });
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: c_cont.current,
+            start: "top 70%",
+            toggleActions: "play none restart reverse",
+          },
+        })
+        .to("[data-section-heading]", {
+          clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+          opacity: 1,
+          duration: 1,
+          ease: Power3.easeOut,
+        })
+        .to("[data-contribution]", {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          stagger: 0.2,
+          ease: Power3.out,
+          immediateRender: false,
+        });
     }, c_cont);
 
     return () => ctx.revert();
@@ -74,17 +84,14 @@ const Contributions = () => {
         alt="Emmanuel Adeleye Portfolio"
       />
       <div className={`${styles.sectionDefault}`}>
-        <>
+        <div ref={c_cont}>
           <SectionHeading h1="Contributions" h2="Contributions" />
-          <div
-            className="flex flex-wrap gap-[24px] md:gap-[32px] justify-between mt-[40px]"
-            ref={c_cont}
-          >
+          <div className="flex flex-wrap gap-[24px] md:gap-[32px] justify-between mt-[40px]">
             {contributionsInfo.map((item) => (
               <Contribution key={item.id} {...item} />
             ))}
           </div>
-        </>
+        </div>
       </div>
     </section>
   );

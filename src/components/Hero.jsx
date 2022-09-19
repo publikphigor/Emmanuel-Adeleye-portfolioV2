@@ -16,7 +16,7 @@ import {
 } from "../assets";
 import { styles } from "../constants";
 
-const Hero = ({ theme, nextSection }) => {
+const Hero = ({ theme }) => {
   const el = useRef(null);
 
   useLayoutEffect(() => {
@@ -26,7 +26,6 @@ const Hero = ({ theme, nextSection }) => {
         start: "top top",
         pin: "#hero",
         pinSpacing: false,
-        pinSpacer: el.current,
       });
 
       gsap
@@ -61,7 +60,7 @@ const Hero = ({ theme, nextSection }) => {
   }, [theme]);
 
   return (
-    <div ref={el} className="relative">
+    <div ref={el} className="relative h-[100vh]">
       <section id="hero" className={`${styles.sectionDefault} relative mt-[130px] top-0`}>
         <div className="w-full overflow-hidden">
           <img className="block w-[220px] mx-auto hero-img" src={emmah} alt="Emmanuel Adeleye" />
