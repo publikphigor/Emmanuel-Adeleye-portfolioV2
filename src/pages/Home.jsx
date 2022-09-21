@@ -20,7 +20,7 @@ const Home = ({ theme, toggleTheme }) => {
       <Projects nextSection={nextSection} setNextSection={setNextSection} />
       <Contributions />
       <Articles />
-      <Contact />
+      <Contact theme={theme} />
       <Footer theme={theme} />
     </>
   );
