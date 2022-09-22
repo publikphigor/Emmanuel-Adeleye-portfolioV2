@@ -1,7 +1,12 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { light_mode, dark_mode, close, open, plus, close_circle } from "../assets";
 import { navLinks } from "../constants";
 import { NavbarDropdown, Logo } from "../components";
+
+// GSAP
+import { gsap, Power4, Power3 } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 // {Creating dynamic navigation menus that returns different jsx depending on which has a dropdown in its data. Passing the dropdown toggle function as a prop ==> setMobileDropdown}
 function NavLink({ name, link, img, active, setMobileDropdown }) {
@@ -31,18 +36,30 @@ function NavLink({ name, link, img, active, setMobileDropdown }) {
   }
 }
 
+//mobile navbar component
+function MbNavLink({ name, link }) {
+  return (
+    <li
+      data-mb-navlink
+      className="border-b border-brand-gray-200 dark:border-brand-gray-300 uppercase font-semibold py-6"
+    >
+      <a href={link}>{name}</a>
+    </li>
+  );
+}
+
 // {Dropdown menu component for the mobile navbar}
 function MobileDropDown() {
   return (
     <div>
       <ul className="text-brand-black dark:text-white">
-        <li className="uppercase font-normal py-3">
+        <li data-mb-dropdown className="uppercase font-normal py-3">
           <a href="/">Case Studies</a>
         </li>
-        <li className="uppercase font-normal py-3">
+        <li data-mb-dropdown className="uppercase font-normal py-3">
           <a href="/">Dribble Shots</a>
         </li>
-        <li className="uppercase font-normal py-3">
+        <li data-mb-dropdown className="uppercase font-normal py-3">
           <a href="/">3D & Illustration</a>
         </li>
       </ul>
@@ -63,8 +80,129 @@ const Header = ({ theme, toggleTheme }) => {
     setMobileDropdown((prev) => !prev);
   }
 
+  // ==== GSAP animations ====
+
+  const el = useRef(null);
+  useEffect(() => {
+    gsap.set("[data-mb-navlink]", {
+      x: "-50%",
+      opacity: 0,
+    });
+    gsap.set("[data-mb-navbar]", {
+      y: "-110%",
+    });
+
+    let ctx = gsap.context(() => {
+      if (navbar) {
+        gsap
+          .timeline()
+          .to("[data-mb-navbar]", {
+            y: 0,
+            duration: 0.4,
+            ease: Power4.easeInOut,
+            immediateRender: false,
+          })
+          .to(
+            "[data-mb-navlink]",
+            {
+              x: 0,
+              opacity: 1,
+              duration: 0.8,
+              stagger: 0.2,
+              ease: Power4.easeInOut,
+              immediateRender: false,
+            },
+            1
+          );
+      }
+
+      if (!navbar) {
+        gsap
+          .timeline()
+          .to("[data-mb-navlink]", {
+            x: "-50%",
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: Power4.easeInOut,
+            immediateRender: false,
+          })
+          .to(
+            "[data-mb-navbar]",
+            {
+              y: "-110%",
+              duration: 0.5,
+              ease: Power4.easeInOut,
+              immediateRender: false,
+            },
+            0.5
+          );
+      }
+    }, el);
+
+    return () => {
+      ctx.revert();
+    };
+  }, [navbar]);
+
+  useEffect(() => {
+    gsap.set("[data-mb-dropdown]", {
+      y: "-50%",
+      opacity: 0,
+    });
+    gsap.set("[data-mb-dropdown-cont]", {
+      maxHeight: 0,
+    });
+
+    let ctx = gsap.context(() => {
+      if (mobileDropdown) {
+        gsap
+          .timeline()
+          .to("[data-mb-dropdown-cont]", {
+            maxHeight: 200,
+            duration: 0.4,
+            immediateRender: false,
+          })
+          .to(
+            "[data-mb-dropdown]",
+            {
+              y: 0,
+              opacity: 1,
+              duration: 0.6,
+              stagger: 0.2,
+              ease: Power4.easeInOut,
+              immediateRender: false,
+            },
+            0.5
+          );
+      }
+
+      if (!mobileDropdown) {
+        gsap
+          .timeline()
+          .to("[data-mb-dropdown]", {
+            y: "-50%",
+            opacity: 0,
+            duration: 0.6,
+            stagger: 0.2,
+            ease: Power4.easeInOut,
+            immediateRender: false,
+          })
+          .to("[data-mb-dropdown-cont]", {
+            maxHeight: 0,
+            duration: 0.4,
+            immediateRender: false,
+          });
+      }
+    }, el);
+
+    return () => {
+      ctx.revert();
+    };
+  }, [mobileDropdown]);
+
   return (
-    <header className="fixed top-0 z-[100] w-full">
+    <header ref={el} className="fixed top-0 z-[100] w-full">
       <div className="flex justify-between items-center w-full py-6 px-[16px] md:px-[4%] lg:px-[16%] dark:bg-bg_dark transition bg-white duration-500 ease-linear relative z-[11]">
         <div className="w-auto order-2 lg:order-1 justify-center lg:justify-start">
           <Logo theme={theme} />
@@ -108,16 +246,20 @@ const Header = ({ theme, toggleTheme }) => {
       </div>
 
       {/* {Mobile Navbar} */}
-      <div
-        className={`block lg:hidden bg-white dark:bg-bg_dark w-full transition-[transform_color_background-color] duration-500 ease-linear h-screen fixed top-[64px] left-0 px-[24px] py-[20px] z-[90] ${
+      {/* {className={`block lg:hidden bg-white dark:bg-bg_dark w-full transition-[transform_color_background-color] duration-500 ease-linear h-screen fixed top-[64px] left-0 px-[24px] py-[20px] z-[90] ${
           navbar ? "translate-y-0" : "-translate-y-[110%]"
+        }`}} */}
+      <div
+        data-mb-navbar
+        className={`block lg:hidden bg-white dark:bg-bg_dark w-full transition-[transform_color_background-color] duration-500 ease-linear h-screen fixed top-[64px] left-0 px-[24px] py-[20px] z-[90] -translate-y-[110%]
         }`}
       >
         <ul className="text-brand-black dark:text-white">
-          <li className="border-b border-brand-gray-200 dark:border-brand-gray-300 uppercase font-semibold py-6">
-            <a href="/">Home</a>
-          </li>
-          <li className="border-b border-brand-gray-200 dark:border-brand-gray-300 uppercase font-semibold py-6 flex flex-col">
+          <MbNavLink link="/" name="Home" />
+          <li
+            data-mb-navlink
+            className="border-b border-brand-gray-200 dark:border-brand-gray-300 uppercase font-semibold py-6 flex flex-col"
+          >
             <div className="w-full flex justify-between items-center">
               <a href="/">Projects</a>
               <img
@@ -129,20 +271,12 @@ const Header = ({ theme, toggleTheme }) => {
             </div>
 
             {/* {Projects/case study dropdown on mobile} */}
-            <div
-              className={`transition-[max-height] overflow-hidden ${
-                mobileDropdown ? "max-h-[200px]" : "max-h-0"
-              }`}
-            >
+            <div data-mb-dropdown-cont className={`transition-[max-height] overflow-hidden`}>
               <MobileDropDown />
             </div>
           </li>
-          <li className="border-b border-brand-gray-200 dark:border-brand-gray-300 uppercase font-semibold py-6">
-            <a href="/">About</a>
-          </li>
-          <li className="border-b border-brand-gray-200 dark:border-brand-gray-300 uppercase font-semibold py-6">
-            <a href="/">My Resume</a>
-          </li>
+          <MbNavLink link="/" name="About" />
+          <MbNavLink link="/" name="My Resume" />
         </ul>
       </div>
 

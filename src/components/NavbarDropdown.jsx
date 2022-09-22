@@ -79,8 +79,8 @@ const NavbarDropdown = ({ toggle, setToggle }) => {
         gsap
           .timeline()
           .to("[data-nav-drop]", {
-            opacity: 0,
             y: "-100%",
+            opacity: 0,
             duration: 1,
             stagger: 0.2,
             ease: Power3.easeOut,
